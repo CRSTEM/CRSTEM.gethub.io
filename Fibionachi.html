@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		  <meta charset="utf-8">
+		  <meta name="viewport" content="width=device-width, initial-scale=1">
+		  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+		  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+		  <link rel="shortcut icon" href="https://upload.wikimedia.org/wikipedia/en/3/39/Wakerlink.jpg" type="image/gif" sizes="16x16">
+		  <style>
+			div.jumbotron{
+				background: linear-gradient(to right, black , cyan);
+				color: white;
+				padding-left:2%
+			}
+			body{
+				background-color: black;
+			}
+			canvas{
+				background-color: gray;
+				border-style: solid;
+			}
+			a{
+				color: white;
+			}
+			</style>
+	</head>
+	<body>
+		<div class="jumbotron">
+			<h1>Fibonacci Sequence</h1>
+		</div>
+		<a id="fb"></a>
+		<script>
+			var initial = 0;
+			var secondary = 1;
+			document.getElementById("fb").innerHTML += initial + "<br>";
+			document.getElementById("fb").innerHTML += secondary + "<br>";
+				
+			while(initial<100000000){
+				initial = initial + secondary;
+				secondary = secondary + initial;
+				document.getElementById("fb").innerHTML += initial + "<br>";
+				document.getElementById("fb").innerHTML += secondary + "<br>";
+			}
+
+		</script>
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

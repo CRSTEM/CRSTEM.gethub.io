@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			a{
+				font-size: 150%;
+			}
+			canvas{
+				border-style: solid;
+				
+			}
+		</style>
+	</head>
+	
+	<body>
+		<h1>Arrays: Barcode</h1>
+		<hr>
+		<br>
+		<canvas onclick="printBars();" id="myCanvas" height="100px" width="500px"></canvas>
+		<a id="answer"></a>
+		<script>
+			var arr = [];
+			var c = document.getElementById("myCanvas");
+			
+			//For getting a random number
+			function random(min, max) {
+				return parseInt(Math.random() * (max - min) + min);
+			}
+			
+			function printBars(){
+				clearCanvas();
+				arr = [];
+				for(var i=0;i<c.width; i++){
+					arr.push(random(0,2));
+					
+					if(arr[i] == 1){
+						var vline = c.getContext("2d");
+						vline.beginPath();
+						vline.moveTo(i, 0);
+						vline.lineTo(i, c.height);
+						vline.stroke();
+					}
+				}
+			}
+			
+			function clearCanvas(){
+				var ctx=c.getContext("2d");
+				ctx.rect(0,0,c.width,c.height);
+				ctx.fillStyle="#FFFFFF";
+				ctx.stroke();
+				ctx.fill();
+			}
+		</script>
+	</body>
+</html>
